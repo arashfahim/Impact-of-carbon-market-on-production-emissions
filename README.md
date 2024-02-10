@@ -5,9 +5,4 @@ The numerical scheme is solving the HJB equation using Clark-Nicholson scheme. T
 
 $$-\partial_t V^{(2)}$$
 
-$$\begin{cases}
- 0
- &=
- -\partial_t V^{(2)}-(\mu_t-\lambda_t\gamma_t) V^{(2)}_y - \frac12 \gamma^2 V^{(2)}_{yy}-\sup_{q\ge 0} \theta(t,q,V^{(2)}_y,V^{(2)}_e)\\
-& V^{(2)}(T,y,e)= -\alpha{1}_{\{y>0\}}e,
- \end{cases}$$
+$$\begin{cases}0&=-\partial_t V^{(2)}-(\mu_t-\lambda_t\gamma_t) V^{(2)}_y - \frac12 \gamma^2 V^{(2)}_{yy}-\sup_{q\ge 0} \theta(t,q,V^{(2)}_y,V^{(2)}_e)\\& V^{(2)}(T,y,e)= -\alpha{1}_{\{y>0\}}e,\end{cases}$$
