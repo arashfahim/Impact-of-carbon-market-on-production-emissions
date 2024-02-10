@@ -1,0 +1,87 @@
+\documentclass[border=10pt]{article}
+\usepackage{pgfplots}
+ \usepackage{caption}
+\usepackage{tikz}
+\usepackage{subcaption}                  
+\addtolength{\textwidth}{2cm}
+\addtolength{\hoffset}{-1cm}
+%\addtolength{\textheight}{2cm}
+%\addtolength{\voffset}{-1cm}
+\pgfplotsset{compat=newest}
+\begin{document}
+\[  -\partial_t V - \frac{\gamma^2}{2}\partial_{yy} V -\mu \partial_{y} V -\frac{1}{4\rho}(1+\partial_e V + (1-\gamma)\partial_y V)_+^2 = 0  \]   
+The parameters of the problem:\\ 
+$\gamma=0.5$, $\alpha=0.1$, $\beta=1$, $\pi=q(1-q)$, $\eta(q)=\lambda(q)=q$, $T=10$, $\mu=0.1$ and $\varrho=0.9$ ($a=5$),  bounded domain for $(t,y,e)$ is $[0,10]\times[-20, 20]\times[-20, +20]$ with transparent Dirichlet boundary condition 
+\[V(t,e,-20)=\frac{(T-t)}{4\varrho},\hspace*{.3cm} V(t,e,20)=-\alpha e+(1-\alpha)^2\frac{(T-t)}{4\varrho}
+\]
+and terminal condition $V(T,e,y)=-\alpha e1_{\{y>0\}}$.
+\begin{figure}
+\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tikzpicture}
+\begin{axis}[xlabel={$y$}, ylabel={$e$}, grid=none, colormap/jet, colorbar, 
+%point meta min=3, point meta max=-10, 
+colorbar style={
+ /pgf/number format/precision=3,
+ %ytick={3.777,3.778,3.779,3.780,3.781,3.782,3.783,3.784}
+},
+view={0}{90}]
+\addplot3[surf,shader=flat] file {terminal.dat};
+\end{axis}
+\end{tikzpicture}
+}
+\caption{Terminal condition $V(T,\cdot)$}
+\end{subfigure}
+\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tikzpicture}
+\begin{axis}[xlabel={$y$}, ylabel={$e$}, grid=none, colormap/jet, colorbar, 
+%point meta min=0, point meta max=-10, 
+colorbar style={
+ /pgf/number format/precision=3, %ytick={3.777,3.778,3.779,3.780,3.781,3.782,3.783,3.784}
+},
+view={0}{90}]
+\addplot3[surf,shader=flat] file {solution.dat};
+\end{axis}
+\end{tikzpicture}
+}
+\caption{Solution $V(0,\cdot)$}
+\end{subfigure}
+\end{figure}
+\begin{figure}
+\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tikzpicture}\begin{axis}[xlabel={$y$}, ylabel={$e$}, grid=none, colormap/jet,               colorbar,
+%point meta min=-.7, point meta max=.1, 
+colorbar style={
+/pgf/number format/precision=3,
+%ytick={.1110,.1111,.1112,.1113,.1114}
+},
+view={0}{90}]
+\addplot3[surf,shader=flat] file {correction.dat};
+\end{axis}
+\end{tikzpicture}
+}
+\caption{Correction term $\tau=(1-\gamma)V_y+(\varrho^{-1}-1)(1+V_e+(1-\gamma)V_y)_+$}
+\end{subfigure}
+\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tikzpicture}\begin{axis}[xlabel={$y$}, ylabel={$e$}, grid=none, colormap/jet,               colorbar,
+%point meta min=0, point meta max=.6, 
+colorbar style={
+/pgf/number format/precision=3,
+%ytick={0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1}
+},
+view={0}{90}]
+\addplot3[surf,shader=flat]  file {optimal_control.dat};
+\end{axis}
+\end{tikzpicture}
+}
+\caption{Optimal Control $\frac{1}{2\varrho}(1+V_e+(1-\gamma)V_y)_+$}
+\end{subfigure}
+\end{figure}
+\end{document}

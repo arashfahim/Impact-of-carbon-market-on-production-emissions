@@ -1,0 +1,74 @@
+Number of time intervals: 1000
+Number of intervals for y: 200
+Number of intervals for e: 200
+Domain of y: [-20, +20]
+Domain of e: [-20, +20]
+Number of samples for MC: 1000
+Time horizon: [0, 10]
+0(explicit) <= theta <=1(implicit) : 0.9
+gamma: 0.5
+mu: 0.1
+rho=(1-1/(2*a)): 0.9
+alpha: 0.1
+Terminal Condition: V(T,y,e) = -alpha*e*1_{y>0}
+Artificial Boundary Condition (ABC):Transparent Dirichlet 
+V(t,-20,e) = (T-t)/(4rho) 
+V(t,20,e) = -alpha*e+(1-alpha)^2(T-t)/(4rho) 
+At (t,e,0) ABC is obtained by some approximation of optimal control
+c from CFL condition (<.5 necessary for explicit, i.e. whenever theta=0): 0.03125
+
+Mesh built!
+Dirichlet boundary condition in step 900
+LU decomposition for implicit(explicit) scheme for diffusion term at step 900!
+Solution of diffusion term at step 900!
+Dirichlet boundary condition in step 900
+Solution of the advection-nonlinear term calculated at step 900!
+Dirichlet boundary condition in step 800
+LU decomposition for implicit(explicit) scheme for diffusion term at step 800!
+Solution of diffusion term at step 800!
+Dirichlet boundary condition in step 800
+Solution of the advection-nonlinear term calculated at step 800!
+Dirichlet boundary condition in step 700
+LU decomposition for implicit(explicit) scheme for diffusion term at step 700!
+Solution of diffusion term at step 700!
+Dirichlet boundary condition in step 700
+Solution of the advection-nonlinear term calculated at step 700!
+Dirichlet boundary condition in step 600
+LU decomposition for implicit(explicit) scheme for diffusion term at step 600!
+Solution of diffusion term at step 600!
+Dirichlet boundary condition in step 600
+Solution of the advection-nonlinear term calculated at step 600!
+Dirichlet boundary condition in step 500
+LU decomposition for implicit(explicit) scheme for diffusion term at step 500!
+Solution of diffusion term at step 500!
+Dirichlet boundary condition in step 500
+Solution of the advection-nonlinear term calculated at step 500!
+Dirichlet boundary condition in step 400
+LU decomposition for implicit(explicit) scheme for diffusion term at step 400!
+Solution of diffusion term at step 400!
+Dirichlet boundary condition in step 400
+Solution of the advection-nonlinear term calculated at step 400!
+Dirichlet boundary condition in step 300
+LU decomposition for implicit(explicit) scheme for diffusion term at step 300!
+Solution of diffusion term at step 300!
+Dirichlet boundary condition in step 300
+Solution of the advection-nonlinear term calculated at step 300!
+Dirichlet boundary condition in step 200
+LU decomposition for implicit(explicit) scheme for diffusion term at step 200!
+Solution of diffusion term at step 200!
+Dirichlet boundary condition in step 200
+Solution of the advection-nonlinear term calculated at step 200!
+Dirichlet boundary condition in step 100
+LU decomposition for implicit(explicit) scheme for diffusion term at step 100!
+Solution of diffusion term at step 100!
+Dirichlet boundary condition in step 100
+Solution of the advection-nonlinear term calculated at step 100!
+Dirichlet boundary condition in step 0
+LU decomposition for implicit(explicit) scheme for diffusion term at step 0!
+Solution of diffusion term at step 0!
+Dirichlet boundary condition in step 0
+Solution of the advection-nonlinear term calculated at step 0!
+Writing to files.....
+CSV files created!
+DAT files created!
+23 seconds for generation
