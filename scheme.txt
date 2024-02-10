@@ -1,0 +1,6 @@
+#!/bin/sh
+g++ main.cpp mtrand.cpp scheme_neg.cpp -o scheme.out
+g++ main.cpp mtrand.cpp scheme.cpp -o scheme.exe
+./scheme.out
+lualatex heatmap.tex
+open heatmap.pdf
